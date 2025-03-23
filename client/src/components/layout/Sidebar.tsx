@@ -150,14 +150,16 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                 </div>
                 
                 {filteredItems.map((item, itemIndex) => (
-                  <Link key={itemIndex} href={item.path}>
-                    <a className={cn(
+                  <Link 
+                    key={itemIndex} 
+                    href={item.path}
+                    className={cn(
                       "flex items-center space-x-2 px-4 py-2.5 text-slate-300 hover:bg-slate-800",
                       location === item.path && "bg-primary-700 text-white hover:bg-primary-700"
-                    )}>
-                      {item.icon}
-                      <span>{item.name}</span>
-                    </a>
+                    )}
+                  >
+                    {item.icon}
+                    <span>{item.name}</span>
                   </Link>
                 ))}
                 

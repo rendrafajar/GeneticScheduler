@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Layout from "@/components/layout/Layout";
 import { 
   Card, 
@@ -83,15 +83,15 @@ export default function PengaturanPage() {
   });
   
   // Set nilai form ketika data appSettings tersedia
-  useState(() => {
+  useEffect(() => {
     if (appSettings) {
       appSettingsForm.reset({
-        appName: appSettings.appName,
-        footerText: appSettings.footerText || "",
-        appLogo: appSettings.appLogo || "",
+        appName: appSettings?.appName || "",
+        footerText: appSettings?.footerText || "",
+        appLogo: appSettings?.appLogo || "",
       });
     }
-  });
+  }, [appSettings, appSettingsForm]);
   
   // Mutasi untuk update pengaturan aplikasi
   const updateAppSettingsMutation = useMutation({
@@ -176,9 +176,9 @@ export default function PengaturanPage() {
   const handleReset = () => {
     if (appSettings) {
       appSettingsForm.reset({
-        appName: appSettings.appName,
-        footerText: appSettings.footerText || "",
-        appLogo: appSettings.appLogo || "",
+        appName: appSettings?.appName || "",
+        footerText: appSettings?.footerText || "",
+        appLogo: appSettings?.appLogo || "",
       });
       toast({
         title: "Formulir direset",
