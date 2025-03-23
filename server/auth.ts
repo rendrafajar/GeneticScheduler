@@ -114,6 +114,8 @@ export function setupAuth(app: Express) {
           return next(err);
         }
         
+        console.log("User logged in successfully:", user.id, user.username, user.role);
+        
         // Don't return the password
         const { password, ...userWithoutPassword } = user;
         return res.status(200).json(userWithoutPassword);

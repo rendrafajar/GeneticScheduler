@@ -661,11 +661,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   app.post("/api/schedule-generations", async (req, res) => {
-    if (!req.isAuthenticated() || (req.user.role !== 'admin' && req.user.role !== 'user')) {
-      return res.status(403).json({ message: "Tidak memiliki akses" });
+    if (!req.isAuthenticated()) {
+      return res.status(401).json({ message: "Tidak terautentikasi" });
     }
     
+    // Semua pengguna yang sudah login bisa mengakses fitur ini
     try {
+      console.log("User generating schedule:", req.user.id, req.user.username, req.user.role);
+      
       const scheduleGenData = insertScheduleGenerationSchema.parse({
         ...req.body,
         createdBy: req.user.id
