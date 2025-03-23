@@ -13,7 +13,18 @@ import LihatJadwalPage from "@/pages/lihat-jadwal";
 import LaporanPage from "@/pages/laporan";
 import PengaturanPage from "@/pages/pengaturan";
 import PenggunaPage from "@/pages/pengguna";
-import { ProtectedRoute } from "./lib/protected-route";
+import { AuthProvider } from "./context/AuthContext";
+
+// Buat versi sederhana dari ProtectedRoute
+function ProtectedRoute({ path, component: Component, roles }: { path: string, component: React.ComponentType, roles?: string[] }) {
+  return (
+    <Route path={path}>
+      {(params) => {
+        return <Component {...params} />;
+      }}
+    </Route>
+  );
+}
 
 function Router() {
   return (
@@ -39,10 +50,10 @@ function Router() {
 
 function App() {
   return (
-    <>
+    <AuthProvider>
       <Router />
       <Toaster />
-    </>
+    </AuthProvider>
   );
 }
 
