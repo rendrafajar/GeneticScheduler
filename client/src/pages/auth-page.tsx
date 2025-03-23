@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useAuth } from "@/hooks/use-auth";
 import { useLocation } from "wouter";
 import { 
@@ -37,11 +37,12 @@ export default function AuthPage() {
   const { loginMutation, registerMutation, user } = useAuth();
   const [location, navigate] = useLocation();
 
-  // If user is already logged in, redirect to dashboard
-  if (user) {
-    navigate("/");
-    return null;
-  }
+  // Gunakan useEffect untuk redirect ketika sudah login
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  }, [user, navigate]);
 
   // Login form
   const loginForm = useForm<z.infer<typeof loginSchema>>({
