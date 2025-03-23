@@ -84,13 +84,13 @@ export default function Dashboard() {
   return (
     <Layout title="Dashboard">
       {/* Welcome card */}
-      <div className="bg-gradient-to-r from-primary-700 to-primary-600 rounded-lg p-6 text-white mb-6 shadow-lg">
+      <div className="bg-gradient-to-r from-blue-700 to-indigo-600 rounded-lg p-6 text-white mb-6 shadow-lg">
         <h1 className="text-2xl font-semibold mb-2">Selamat Datang di SMARTA</h1>
         <p className="mb-4 opacity-90">Sistem Manajemen Penjadwalan Terpadu dengan Algoritma Genetika</p>
         <div className="flex flex-wrap gap-4">
           <Button 
             variant="secondary" 
-            className="bg-white text-primary-700 hover:bg-slate-100"
+            className="bg-white text-blue-700 hover:bg-slate-100"
             onClick={openGenerateModal}
           >
             <CogIcon className="mr-2 h-4 w-4" />
@@ -98,7 +98,7 @@ export default function Dashboard() {
           </Button>
           <Button 
             variant="outline" 
-            className="bg-primary-800 text-white border-primary-800 hover:bg-primary-900 hover:text-white"
+            className="bg-blue-800 text-white border-blue-800 hover:bg-blue-900 hover:text-white"
             asChild
           >
             <Link href="/lihat-jadwal">
