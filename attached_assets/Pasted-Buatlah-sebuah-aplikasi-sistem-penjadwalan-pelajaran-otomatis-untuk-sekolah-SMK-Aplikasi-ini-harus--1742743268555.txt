@@ -1,0 +1,58 @@
+Buatlah sebuah aplikasi sistem penjadwalan pelajaran otomatis untuk sekolah SMK. Aplikasi ini harus mampu menghasilkan jadwal pelajaran yang optimal dengan mempertimbangkan berbagai batasan dan preferensi. Gunakan algoritma genetika sebagai metode utama untuk optimasi penjadwalan.
+
+Fitur Utama yang Dibutuhkan:
+-Aplikasi berbahasa indonesia
+-Desain UI profesional dan responsif
+-pengoperasian aplikasi yang interaktif
+
+Input Data:
+-Manajemen Kurikulum yang mengatur mata pelajaran perjenjang
+-Manajemen guru dan ketersediaan guru
+-Manajemen kelas
+-Manajemen Ruangan (ruang teori, ruang praktikum)
+-Manajemen slot waktu
+
+Batasan:
+-Batasan waktu yang tidak tersedia untuk guru atau matapelajaran.
+-Batasan ruang kelas terhadap jurusan
+-Preferensi guru terhadap hari atau jam mengajar.
+-Preferensi mata pelajaran tertentu pada hari atau jam tertentu.
+-Jumlah hari dan jam pelajaran dalam seminggu.
+-Proses Penjadwalan dengan Algoritma Genetika:
+Representasi kromosom yang efektif untuk jadwal pelajaran.
+Fungsi fitness yang mempertimbangkan berbagai batasan (bentrok jadwal guru, bentrok jadwal kelas, kapasitas ruang, preferensi guru dan kelas jika ada).
+Operator genetika (seleksi, crossover, mutasi) yang sesuai untuk menghasilkan jadwal yang valid dan optimal.
+Parameter algoritma genetika yang dapat dikonfigurasi (ukuran populasi, jumlah generasi, probabilitas crossover dan mutasi).
+
+Output Jadwal:
+-Menampilkan jadwal pelajaran per kelas dalam format yang mudah dibaca (misalnya tabel).
+-Menampilkan jadwal mengajar per guru.
+-Menampilkan jadwal pelajaran keseluruhan
+-Kemampuan untuk mencetak atau mengekspor jadwal ke excel dan pdf.
+
+Fitur Tambahan:
+-Manajemen data pengguna untuk admin :
+	-role admin :
+		-dapat mengatur preferensi aplikasi : nama aplikasi, mengganti logo aplikasi, mengganti footer
+		-dapat menambah, mengedit, dan menghapus user
+		-dapat melakukan input data dan generate jadwal
+	-role user : 
+		-dapat melakukan input data
+		-dapat melakukan generate jadwal
+		-dapat mencetak dan export jadwal
+		-dapat melihat laporan hasil generate jadwal
+	-role viewer:
+		-dapat melihat jadwal perkelas dan perguru
+
+-Kemampuan untuk menyimpan dan memuat jadwal.
+-Visualisasi jadwal.
+-Laporan statistik mengenai kualitas jadwal yang dihasilkan.
+-Laporan beban mengajar guru
+-Kemampuan untuk melakukan penjadwalan ulang sebagian jika ada perubahan data.
+
+Detail Tambahan:
+Desain Antarmuka Pengguna (UI):
+- UI menggunakan ShadCN UI 
+- Gunakan desain UI yang modern, responsif, dan user friendly
+- Fitur drag and drop untuk mengedit jadwal yang telah dibuat
+- aplikasi memiliki kemampuan interaktif dalam pemakaian aplikasi
